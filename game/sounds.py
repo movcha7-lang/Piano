@@ -1,9 +1,11 @@
 import pygame as pg
-sounds = {}
-def soundsdownloads():
-    for note in ["c6", "d6", "e6", "f6", "g6", "a6", "b6"]:
+
+def soundsdownloads(notes):
+    sounds = {}
+    for note in notes:
         path = f"assets/sounds/{note}.mp3"
         sounds[note] = pg.mixer.Sound(path)
+    return sounds
 def playnote(note):
     if note in sounds:
         sounds[note].play()
