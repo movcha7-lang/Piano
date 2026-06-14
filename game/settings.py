@@ -1,4 +1,4 @@
-WINDOWWIDTH = 800
+WINDOWWIDTH = 1000
 WINDOWHEIGHT = 400
 SOUNDS = {"a":"a6", "b":"b6", "c":"c6", "d":"d6", "e":"e6", "f":"f6", "g":"g6"}
 WHITE = (255,255,255)

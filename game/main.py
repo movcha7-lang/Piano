@@ -5,7 +5,7 @@ import keys
 import buttons 
 
 pg.init()
-screen = pg.display.set_mode((settings.WINDOWHEIGHT, settings.WINDOWWIDTH))
+screen = pg.display.set_mode((settings.WINDOWWIDTH, settings.WINDOWHEIGHT))
 pg.display.set_caption("Piano")
 sounds = sounds.soundsdownloads(settings.SOUNDS)
 keyrects = keys.createrect(len(settings.SOUNDS))
@@ -39,13 +39,13 @@ while running == True:
         for button in buttons:
             button.handle_events(e)
         if e.type == pg.KEYDOWN:
-            k = key.name(e.key)
+            k = pg.key.name(e.key)
             if k in sounds:
                 sounds[k].play()
                 indx = keyslist.index(k)
                 pressedkeys.add(indx)
         if e.type == pg.KEYUP:
-            k = key.name(e.key)
+            k = pg.key.name(e.key)
             if k in sounds:
                 indx = keyslist.index(k)
                 if indx in pressedkeys:
